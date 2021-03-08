@@ -8,8 +8,8 @@ import styles from './styles.css';
 
 export type Props = { text: string };
 
-const ExampleComponent: React.FC<Props> = ({ text }) => {
+const Scheduler: React.FC<Props> = ({ text }) => {
   return <div className={styles.test}>Example Component:dd {text}</div>;
 };
 
-export default ExampleComponent;
+export default Scheduler;
