@@ -2,17 +2,20 @@
  * @class Scheduler
  */
 
-import * as React from 'react';
+import React, { useState } from 'react';
 
 import styles from './styles.css';
 import SchedulerHeader from './SchedulerHeader';
+import { ViewType } from './Scheduler';
+import { VIEW_TYPE } from './constants';
 
-export type Props = { text: string };
+export type Props = { viewType: ViewType };
 
-const Scheduler: React.FC<Props> = () => {
+const Scheduler: React.FC<Props> = ({ viewType = VIEW_TYPE.MONTH }) => {
+  const [localViewType, setViewType] = useState<ViewType>(viewType);
   return (
     <div className={styles['scheduler-root']} style={{ width: 1440 }}>
-      <SchedulerHeader />
+      <SchedulerHeader viewType={localViewType} />
       <table className={styles['scheduler-table']}>
         <thead>
           <tr>

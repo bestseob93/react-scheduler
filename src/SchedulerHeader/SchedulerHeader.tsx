@@ -2,11 +2,12 @@
  * @class SchedulerHeader
  */
 
-import * as React from 'react';
+import React from 'react';
+import { ViewType } from '../Scheduler';
 
 // import styles from './styles.css';
 
-export type Props = {};
+export type Props = { viewType: ViewType };
 
 const SchedulerHeader: React.FC<Props> = () => {
   return (
